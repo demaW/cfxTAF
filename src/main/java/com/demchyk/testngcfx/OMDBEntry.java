@@ -1,227 +1,80 @@
 package com.demchyk.testngcfx;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Arrays;
 
 public class OMDBEntry {
-    @JsonProperty("Title")
-    private String title;
-    @JsonProperty("Year")
-    private String year;
-    @JsonProperty("Rated")
-    private String rated;
-    @JsonProperty("Released")
-    private String released;
-    @JsonProperty("Runtime")
-    private String runtime;
-    @JsonProperty("Genre")
-    private String genre;
-    @JsonProperty("Director")
-    private String director;
-    @JsonProperty("Writer")
-    private String writer;
-    @JsonProperty("Actors")
-    private String actors;
-    @JsonProperty("Plot")
-    private String plot;
-    @JsonProperty("Language")
-    private String language;
-    @JsonProperty("Country")
-    private String country;
-    @JsonProperty("Awards")
-    private String awards;
-    @JsonProperty("Poster")
-    private String poster;
-    @JsonProperty("Metascore")
-    private String metascore;
-    private String imdbRating;
+    private String Released;
+
+    private String Website;
+
+    private String Type;
+
     private String imdbVotes;
+
+    private Ratings[] Ratings;
+
+    private String Runtime;
+
+    private String Response;
+
+    private String Poster;
+
     private String imdbID;
-    @JsonProperty("Type")
-    private String type;
-    private String totalSeasons;
-    @JsonProperty("Response")
-    private String response;
 
-    public OMDBEntry() {
-    }
+    private String Country;
 
-    public OMDBEntry(String title, String year, String rated, String released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String country, String awards, String poster, String metascore, String imdbRating, String imdbVotes, String imdbID, String type, String totalSeasons, String response) {
-        this.title = title;
-        this.year = year;
-        this.rated = rated;
-        this.released = released;
-        this.runtime = runtime;
-        this.genre = genre;
-        this.director = director;
-        this.writer = writer;
-        this.actors = actors;
-        this.plot = plot;
-        this.language = language;
-        this.country = country;
-        this.awards = awards;
-        this.poster = poster;
-        this.metascore = metascore;
-        this.imdbRating = imdbRating;
-        this.imdbVotes = imdbVotes;
-        this.imdbID = imdbID;
-        this.type = type;
-        this.totalSeasons = totalSeasons;
-        this.response = response;
-    }
+    private String BoxOffice;
 
-    @Override
-    public String toString() {
-        return "OMDBEntry{" +
-                "title='" + title + '\'' +
-                ", year='" + year + '\'' +
-                ", rated='" + rated + '\'' +
-                ", released='" + released + '\'' +
-                ", runtime='" + runtime + '\'' +
-                ", genre='" + genre + '\'' +
-                ", director='" + director + '\'' +
-                ", writer='" + writer + '\'' +
-                ", actors='" + actors + '\'' +
-                ", plot='" + plot + '\'' +
-                ", language='" + language + '\'' +
-                ", country='" + country + '\'' +
-                ", awards='" + awards + '\'' +
-                ", poster='" + poster + '\'' +
-                ", metascore='" + metascore + '\'' +
-                ", imdbRating='" + imdbRating + '\'' +
-                ", imdbVotes='" + imdbVotes + '\'' +
-                ", imdbID='" + imdbID + '\'' +
-                ", type='" + type + '\'' +
-                ", totalSeasons='" + totalSeasons + '\'' +
-                ", response='" + response + '\'' +
-                '}';
-    }
+    private String Title;
 
-    public String getTitle() {
-        return title;
-    }
+    private String DVD;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    private String imdbRating;
 
-    public String getYear() {
-        return year;
-    }
+    private String Year;
 
-    public void setYear(String year) {
-        this.year = year;
-    }
+    private String Rated;
 
-    public String getRated() {
-        return rated;
-    }
+    private String Actors;
 
-    public void setRated(String rated) {
-        this.rated = rated;
-    }
+    private String Plot;
+
+    private String Metascore;
+
+    private String Writer;
+
+    private String Production;
+
+    private String Genre;
+
+    private String Language;
+
+    private String Awards;
+
+    private String Director;
 
     public String getReleased() {
-        return released;
+        return Released;
     }
 
-    public void setReleased(String released) {
-        this.released = released;
+    public void setReleased(String Released) {
+        this.Released = Released;
     }
 
-    public String getRuntime() {
-        return runtime;
+    public String getWebsite() {
+        return Website;
     }
 
-    public void setRuntime(String runtime) {
-        this.runtime = runtime;
+    public void setWebsite(String Website) {
+        this.Website = Website;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getType() {
+        return Type;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public String getWriter() {
-        return writer;
-    }
-
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
-
-    public String getActors() {
-        return actors;
-    }
-
-    public void setActors(String actors) {
-        this.actors = actors;
-    }
-
-    public String getPlot() {
-        return plot;
-    }
-
-    public void setPlot(String plot) {
-        this.plot = plot;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getAwards() {
-        return awards;
-    }
-
-    public void setAwards(String awards) {
-        this.awards = awards;
-    }
-
-    public String getPoster() {
-        return poster;
-    }
-
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
-
-    public String getMetascore() {
-        return metascore;
-    }
-
-    public void setMetascore(String metascore) {
-        this.metascore = metascore;
-    }
-
-    public String getImdbRating() {
-        return imdbRating;
-    }
-
-    public void setImdbRating(String imdbRating) {
-        this.imdbRating = imdbRating;
+    public void setType(String Type) {
+        this.Type = Type;
     }
 
     public String getImdbVotes() {
@@ -232,6 +85,38 @@ public class OMDBEntry {
         this.imdbVotes = imdbVotes;
     }
 
+    public Ratings[] getRatings() {
+        return Ratings;
+    }
+
+    public void setRatings(Ratings[] Ratings) {
+        this.Ratings = Ratings;
+    }
+
+    public String getRuntime() {
+        return Runtime;
+    }
+
+    public void setRuntime(String Runtime) {
+        this.Runtime = Runtime;
+    }
+
+    public String getResponse() {
+        return Response;
+    }
+
+    public void setResponse(String Response) {
+        this.Response = Response;
+    }
+
+    public String getPoster() {
+        return Poster;
+    }
+
+    public void setPoster(String Poster) {
+        this.Poster = Poster;
+    }
+
     public String getImdbID() {
         return imdbID;
     }
@@ -240,28 +125,163 @@ public class OMDBEntry {
         this.imdbID = imdbID;
     }
 
-    public String getType() {
-        return type;
+    public String getCountry() {
+        return Country;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCountry(String Country) {
+        this.Country = Country;
     }
 
-    public String getTotalSeasons() {
-        return totalSeasons;
+    public String getBoxOffice() {
+        return BoxOffice;
     }
 
-    public void setTotalSeasons(String totalSeasons) {
-        this.totalSeasons = totalSeasons;
+    public void setBoxOffice(String BoxOffice) {
+        this.BoxOffice = BoxOffice;
     }
 
-    public String getResponse() {
-        return response;
+    public String getTitle() {
+        return Title;
     }
 
-    public void setResponse(String response) {
-        this.response = response;
+    public void setTitle(String Title) {
+        this.Title = Title;
+    }
+
+    public String getDVD() {
+        return DVD;
+    }
+
+    public void setDVD(String DVD) {
+        this.DVD = DVD;
+    }
+
+    public String getImdbRating() {
+        return imdbRating;
+    }
+
+    public void setImdbRating(String imdbRating) {
+        this.imdbRating = imdbRating;
+    }
+
+    public String getYear() {
+        return Year;
+    }
+
+    public void setYear(String Year) {
+        this.Year = Year;
+    }
+
+    public String getRated() {
+        return Rated;
+    }
+
+    public void setRated(String Rated) {
+        this.Rated = Rated;
+    }
+
+    public String getActors() {
+        return Actors;
+    }
+
+    public void setActors(String Actors) {
+        this.Actors = Actors;
+    }
+
+    public String getPlot() {
+        return Plot;
+    }
+
+    public void setPlot(String Plot) {
+        this.Plot = Plot;
+    }
+
+    public String getMetascore() {
+        return Metascore;
+    }
+
+    public void setMetascore(String Metascore) {
+        this.Metascore = Metascore;
+    }
+
+    public String getWriter() {
+        return Writer;
+    }
+
+    public void setWriter(String Writer) {
+        this.Writer = Writer;
+    }
+
+    public String getProduction() {
+        return Production;
+    }
+
+    public void setProduction(String Production) {
+        this.Production = Production;
+    }
+
+    public String getGenre() {
+        return Genre;
+    }
+
+    public void setGenre(String Genre) {
+        this.Genre = Genre;
+    }
+
+    public String getLanguage() {
+        return Language;
+    }
+
+    public void setLanguage(String Language) {
+        this.Language = Language;
+    }
+
+    public String getAwards() {
+        return Awards;
+    }
+
+    public void setAwards(String Awards) {
+        this.Awards = Awards;
+    }
+
+    public String getDirector() {
+        return Director;
+    }
+
+    public void setDirector(String Director) {
+        this.Director = Director;
+    }
+
+    @Override
+    public String toString() {
+        return "OMDBEntry{" +
+                "Released='" + Released + '\'' +
+                ", Website='" + Website + '\'' +
+                ", Type='" + Type + '\'' +
+                ", imdbVotes='" + imdbVotes + '\'' +
+                ", Ratings=" + Arrays.toString(Ratings) +
+                ", Runtime='" + Runtime + '\'' +
+                ", Response='" + Response + '\'' +
+                ", Poster='" + Poster + '\'' +
+                ", imdbID='" + imdbID + '\'' +
+                ", Country='" + Country + '\'' +
+                ", BoxOffice='" + BoxOffice + '\'' +
+                ", Title='" + Title + '\'' +
+                ", DVD='" + DVD + '\'' +
+                ", imdbRating='" + imdbRating + '\'' +
+                ", Year='" + Year + '\'' +
+                ", Rated='" + Rated + '\'' +
+                ", Actors='" + Actors + '\'' +
+                ", Plot='" + Plot + '\'' +
+                ", Metascore='" + Metascore + '\'' +
+                ", Writer='" + Writer + '\'' +
+                ", Production='" + Production + '\'' +
+                ", Genre='" + Genre + '\'' +
+                ", Language='" + Language + '\'' +
+                ", Awards='" + Awards + '\'' +
+                ", Director='" + Director + '\'' +
+                '}';
     }
 }
 
