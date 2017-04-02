@@ -8,8 +8,8 @@ Create db.json to store data. For ex:
 {
   "Cars": [
     {
-      "model": 1,
-      "id": "Check Todo"
+      "model": "some value",
+      "id": "model id 123"
     }
   ]
 }
