@@ -2,18 +2,22 @@ package com.demchyk.testngcfx;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import javafx.scene.web.WebView;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Collections;
+import java.util.Random;
 
 
 public class AppTest {
@@ -21,6 +25,9 @@ public class AppTest {
     static final String CUR_PARAM = "base=USD";
     public static final String URI = "http://www.omdbapi.com/";
     public static final String ID = "i=tt1219827";
+    static final String LOCAL_URI="http://localhost:3000";
+    static final String LOCAL_PATH = "cars";
+
 
     @Test
     public void testOmdb() {
@@ -71,5 +78,19 @@ public class AppTest {
         }
         System.out.println(car.toString());
         Assert.assertEquals(car, carToCompare);
+    }
+
+    @Test
+    public void testPots(){
+        ObjectMapper objectMapper = new ObjectMapper();
+        Car car = new Car("BMW", "M3" + new Random(100).nextInt());
+        WebClient client = WebClient.create(LOCAL_URI).path(LOCAL_PATH).type(MediaType.APPLICATION_JSON_TYPE);
+        Response response = null;
+        try {
+           response = client.post(objectMapper.writeValueAsString(car));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        System.out.println(response.getStatus());
     }
 }
